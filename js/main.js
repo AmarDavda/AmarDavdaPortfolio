@@ -23,11 +23,12 @@ function initializeWebsite() {
 }
 
 const toggle = document.querySelector(".menu-toggle");
-const menu = document.querySelector("#nav-menu");
+const menu = document.querySelector("nav ul");
 
-toggle.addEventListener("click", function () {
+toggle.addEventListener("click", () => {
     menu.classList.toggle("active");
 });
+
 
 
 function loadHeroSection() {
