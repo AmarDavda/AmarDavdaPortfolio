@@ -758,17 +758,20 @@ section{
 /* mobile */
 @media (max-width:768px){
 
-nav{
-    justify-content:space-between;
-}
-
 .menu-toggle{
     display:block;
     font-size:26px;
     cursor:pointer;
 }
 
-#nav-menu{
+nav{
+    justify-content:space-between;
+}
+
+/* hide menu by default */
+
+nav ul{
+    display:none;
     position:absolute;
     top:70px;
     left:0;
@@ -779,10 +782,11 @@ nav{
     gap:20px;
     padding:25px 0;
     box-shadow:0 5px 15px rgba(0,0,0,0.08);
-    display:none;
 }
 
-#nav-menu.active{
+/* show menu when active */
+
+nav ul.active{
     display:flex;
 }
 
