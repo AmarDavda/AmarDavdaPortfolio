@@ -756,16 +756,19 @@ section{
 }
 
 /* mobile */
-
 @media (max-width:768px){
-
-/* navbar */
 
 nav{
     justify-content:space-between;
 }
 
-nav ul{
+.menu-toggle{
+    display:block;
+    font-size:26px;
+    cursor:pointer;
+}
+
+#nav-menu{
     position:absolute;
     top:70px;
     left:0;
@@ -779,12 +782,10 @@ nav ul{
     display:none;
 }
 
-nav ul.active{
+#nav-menu.active{
     display:flex;
 }
 
-.menu-toggle{
-    display:block;
 }
 
 /* hero */
