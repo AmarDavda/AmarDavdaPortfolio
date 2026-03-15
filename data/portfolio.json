@@ -1,0 +1,189 @@
+{
+  "hero": {
+    "name": "Amar Davda",
+    "title": "Software Engineer",
+    "summary": "As a passionate IT engineering student, I'm eager to use my skills in software development fields with a dynamic professional environment. With a determined mindset and a commitment to continuous learning, I’m seeking opportunities to grow and contribute in the field of technology.",
+    "profileImage": "assets/profile/profile.jpg",
+    "resume": "assets/resume/myResume.pdf"
+  },
+
+  "education": [
+  {
+    "degree": "Bachelor of Technology in Information Technology (B.Tech IT)",
+    "institution": "Marwadi University, Rajkot",
+    "duration": "2022 - 2026",
+    "institutionLogo": "assets/education/mulogo.jpg",
+    "resultImage": "assets/education/mu.jpg"
+  },
+  {
+    "degree": "Higher Secondary Certification (12th)",
+    "institution": "SOS: The School of Science, Eng. Med. School, Rajkot",
+    "duration": "2020 - 2022",
+    "institutionLogo": "assets/education/soslogo.jpg",
+    "resultImage": "assets/education/hsc.jpg"
+  },
+  {
+    "degree": "Secondary School Certification (10th)",
+    "institution": "Saint Hari Eng. Med. School, Jasdan",
+    "duration": "2007 - 2020",
+    "institutionLogo": "assets/education/stharilogo.jpg",
+    "resultImage": "assets/education/ssc.jpg"
+  }
+],
+
+  "skills": {
+  "technical": [
+    {
+      "name": "C",
+      "level": 80,
+      "logo": "assets/skills/c.png"
+    },
+    {
+      "name": "C++",
+      "level": 75,
+      "logo": "assets/skills/cpp.png"
+    },
+    {
+      "name": "HTML",
+      "level": 90,
+      "logo": "assets/skills/html.png"
+    },
+    {
+      "name": "CSS",
+      "level": 85,
+      "logo": "assets/skills/css.png"
+    },
+    {
+      "name": "JavaScript",
+      "level": 75,
+      "logo": "assets/skills/js.png"
+    },
+    {
+      "name": "SQL",
+      "level": 80,
+      "logo": "assets/skills/sql.png"
+    },
+    {
+      "name": "Java",
+      "level": 75,
+      "logo": "assets/skills/java.png"
+    },
+    {
+      "name": "Python",
+      "level": 75,
+      "logo": "assets/skills/python.png"
+    },
+    {
+      "name": "MongoDB",
+      "level": 80,
+      "logo": "assets/skills/mongo.png"
+    },
+    {
+      "name": "C Sharp",
+      "level": 70,
+      "logo": "assets/skills/cs.png"
+    }
+  ],
+
+  "soft": [
+    "Problem Solving",
+    "Teamwork",
+    "Communication",
+    "Presentation",
+    "Time Management"
+  ]
+},
+
+  "certifications": [
+  {
+    "name": "CPA: Programming Essentials in C++",
+    "source": "Cisco",
+    "image": "assets/certificates/cpp.jpg"
+  },
+  {
+    "name": "Java Programming",
+    "source": "Oracle",
+    "image": "assets/certificates/java.jpg"
+  },
+  {
+    "name": "Python 101 for Data Science",
+    "source": "IBM",
+    "image": "assets/certificates/python.jpg"
+  },
+  {
+    "name": "Database Programming with SQL",
+    "source": "Oracle",
+    "image": "assets/certificates/sql.jpg"
+  }
+],
+
+  "additional": {
+  "languages": [
+    "English",
+    "Hindi",
+    "Gujarati"
+  ],
+
+  "tools": [
+    "VS Code",
+    "GitHub",
+    "mySQL"
+  ],
+
+  "interests": [
+    "Mathematics",
+    "Mythology",
+    "Sketching"
+  ],
+
+  "industryVisits": [
+      {
+    "name": "TSS",
+    "date": "Nov 2023"
+  },
+  {
+    "name": "eInfochips",
+    "date": "Oct 2024"
+  }
+  ]
+},
+
+  "experience": [
+  {
+    "role": "Web Developer Intern",
+    "company": "BrainyBeam technologies, Ahmedabad",
+    "duration": "May 2025 - June 2025",
+    "description": [
+      "A B C D E F G H I J K L M",
+      "N O P Q R S T U V W X Y Z",
+      "1 2 3 4 5 6 7 8 9 0"
+    ]
+  }
+],
+
+  "projects": [
+  {
+    "name": "Student Management System",
+    "description": "A web application to manage student records with full CRUD operations.",
+    "tech": ["ASP.NET MVC", "C#", "SQL Server", "Bootstrap"],
+    "github": "",
+    "demo": ""
+  },
+  {
+    "name": "Portfolio Website",
+    "description": "A personal portfolio website built using HTML, CSS, JavaScript and JSON data.",
+    "tech": ["HTML", "CSS", "JavaScript"],
+    "github": "",
+    "demo": ""
+  }
+],
+
+  "contact": {
+  "address": "Yogi Industries, Nr. Post Office, Station Road, Jasdan - 360050, Dist. Rajkot, Gujarat, India",
+  "phone": "+91 8200585066",
+  "email": "amardavda1715@gmail.com",
+  "github": "https://github.com/AmarDavda",
+  "linkedin": "https://www.linkedin.com/in/amar1419davda05"
+}
+
+}
