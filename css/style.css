@@ -386,6 +386,7 @@ nav ul li a:hover::after{
     background:white;
     padding:10px 16px;
     border-radius:20px;
+    width: 150px;
     font-size:14px;
     font-weight: 550;
     text-align:center;
