@@ -120,11 +120,7 @@ body {
     background-color: var(--gold);
     color: black;
 }
-@media (max-width: 768px) {
-    .btn-gold{
-        width: 100px;
-    }
-}
+
 /* SKILLS */
 .skills-section {
     background-color: var(--deep-dark);
