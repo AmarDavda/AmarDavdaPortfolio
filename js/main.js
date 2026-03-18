@@ -359,7 +359,7 @@ function loadContactPage() {
 
             if (item.title === "Whatsapp") {
     if (item.content) {
-        const number = item.content.replace(/\D/g, ""); // remove spaces, +, etc.
+        const number = item.content;
         link = `https://wa.me/${number}?text=Hello Amar,`;
     } else {
         link = "#"; // no number available
