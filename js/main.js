@@ -49,7 +49,8 @@ function loadAbout() {
     const about = portfolioData.about;
 
     document.getElementById("aboutImage").src = about.profileImage2;
-    document.getElementById("aboutSummary").textContent = about.professionalSummary;
+    document.getElementById("aboutSummary").textContent = about.professionalSummary;    
+    document.getElementById("resume").src = "assets/logo/download.png";
     document.getElementById("resumeBtn").href = about.resume;
 }
 
