@@ -120,6 +120,13 @@ body {
     background-color: var(--gold);
     color: black;
 }
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .btn-gold, .btn-outline-gold {
+        width: 150px;
+    }
+}
+
 /* SKILLS */
 .skills-section {
     background-color: var(--deep-dark);
