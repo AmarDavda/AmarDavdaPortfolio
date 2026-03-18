@@ -332,7 +332,8 @@ function loadContactPage() {
     const about = portfolioData.about;
     document.getElementById("resumeBtn").href = about.resume;
 
-    document.getElementById("contactEmailBtn").href = `mailto:${contact.item.find(i => i.title === "Email").content}?subject=Hello Amar`;
+    document.getElementById("contactEmailBtn").href = `mailto:${item.content}?subject=Contact%20from%20Portfolio&body=Hello%2C%0AI%20visited%20your%20portfolio%20and%20would%20like%20to%20connect%20with%20you.%0A%0AThanks
+ `;
 
     const requiredItems = ["Address", "Phone", "Email", "Whatsapp"];
 
