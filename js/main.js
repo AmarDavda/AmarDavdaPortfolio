@@ -1,373 +1,382 @@
 function initializeWebsite() {
 
-    // HOME PAGE SECTIONS
-    if (document.getElementById("hero")) {
-        loadHeroSection();
-        loadEducationSection();
-        loadSkillsSection();
-        loadCertificationsSection();
-        loadAdditionalSection();
-        loadContactSection();
+    const hero = portfolioData.hero;
+    document.getElementById("navlogo").src = hero.logo;
+
+    const isHomePage = document.getElementById("heroName");
+    const isAboutPage = document.getElementById("aboutPageImage");
+    const isSkillsPage = document.getElementById("skillsPage");
+    const isProjectsPage = document.getElementById("projectsPage");
+    const isContactPage = document.getElementById("contactPage");
+
+    if (isHomePage) {
+        loadHero();
+        loadAbout();
+        loadExperience();
     }
 
-    // EXPERIENCE PAGE
-    if (document.getElementById("experience-container")) {
-        loadExperiencePage();
+    if (isAboutPage) {
+        loadAboutPage();
+        loadEducation();
+        loadCertifications();
+        loadAdditionalInfo();
+    }
+    if (isSkillsPage) {
+    loadSkills();
     }
 
-    // PROJECTS PAGE
-    if (document.getElementById("projects-container")) {
-        loadProjectsPage();
+    if (isProjectsPage) {
+    loadProjects();
     }
+    if(isContactPage) {
+    loadContactPage();
+}
 
 }
 
-const toggle = document.querySelector(".menu-toggle");
-const menu = document.querySelector("nav ul");
-
-toggle.addEventListener("click", () => {
-    menu.classList.toggle("active");
-});
-
-
-
-function loadHeroSection() {
-
+function loadHero() {
     const hero = portfolioData.hero;
 
-    const container = document.getElementById("hero-content");
+    document.getElementById("heroName").textContent = hero.name;
+    document.getElementById("city").textContent = hero.city;
+    document.getElementById("heroSummary").textContent = hero.shortSummery;
+    document.getElementById("heroImage").src = hero.profileImage;
+    document.querySelector(".hero-subtitle").textContent = hero.title;
 
-    container.innerHTML = `
-        <div class="hero-wrapper">
+}
 
-            <div class="hero-text">
-                <h1>${hero.name}</h1>
-                <h2>${hero.title}</h2>
-                <p>${hero.summary}</p>
+function loadAbout() {
+    const about = portfolioData.about;
 
-                <div class="hero-buttons">
-                    <a href="${hero.resume}" download>Download Resume</a>
-                    <a href="projects.html">View Projects</a>
+    document.getElementById("aboutImage").src = about.profileImage2;
+    document.getElementById("aboutSummary").textContent = about.professionalSummary;
+    document.getElementById("resumeBtn").href = about.resume;
+}
+
+function loadExperience() {
+    const expData = portfolioData.experience;
+    const container = document.getElementById("experienceContainer");
+
+    container.innerHTML = "";
+
+    // Group items (3 per slide for desktop)
+    let groupSize = window.innerWidth >= 992 ? 3 : 1;
+
+    for (let i = 0; i < expData.length; i += groupSize) {
+        let group = expData.slice(i, i + groupSize);
+
+        let slide = document.createElement("div");
+        slide.className = "carousel-item";
+        if (i === 0) slide.classList.add("active");
+
+        let row = document.createElement("div");
+        row.className = "row";
+
+        group.forEach(exp => {
+            let col = document.createElement("div");
+            col.className = "col-lg-4 mb-4";
+
+            col.innerHTML = `
+                <div class="exp-card">
+                    <h5 class="exp-role">${exp.role}</h5>
+                    <div class="exp-company">${exp.company}</div>
+                    <div class="exp-duration">${exp.duration}</div>
+
+                    <ul class="exp-list">
+                        ${exp.description.map(d => `<li>${d}</li>`).join("")}
+                    </ul>
                 </div>
-            </div>
+            `;
 
-            <div class="hero-image">
-                <img src="${hero.profileImage}" alt="Profile Photo">
-            </div>
-
-        </div>
-    `;
-
-}
-
-function loadEducationSection() {
-
-    const educationList = portfolioData.education;
-
-    const container = document.getElementById("education-container");
-
-    container.innerHTML = "";
-
-    educationList.forEach(edu => {
-
-        const card = `
-    <div class="education-card">
-
-        <img src="${edu.institutionLogo}" alt="${edu.institution} Logo" class="edu-logo">
-
-        <h3>${edu.degree}</h3>
-
-        <p class="edu-institution">${edu.institution}</p>
-
-        <p class="edu-duration">${edu.duration}</p>
-
-        <a href="${edu.resultImage}" target="_blank" class="edu-result-btn">
-            View Result
-        </a>
-
-    </div>
-`;
-
-
-        container.innerHTML += card;
-
-    });
-
-}
-
-function loadSkillsSection() {
-
-    const technicalSkills = portfolioData.skills.technical;
-    const softSkills = portfolioData.skills.soft;
-
-    const techContainer = document.getElementById("technical-skills");
-    const softContainer = document.getElementById("soft-skills");
-
-    techContainer.innerHTML = "<h3>Technical Skills</h3>";
-    softContainer.innerHTML = "<h3>Soft Skills</h3>";
-
-
-    // ===== Technical Skills =====
-    technicalSkills.forEach(skill => {
-
-        const card = `
-            <div class="skill-card">
-
-                <img src="${skill.logo}" alt="${skill.name} logo">
-
-                <div class="skill-info">
-                    <p>${skill.name}</p>
-                    <span>${skill.level}%</span>
-                </div>
-
-            </div>
-        `;
-
-        techContainer.innerHTML += card;
-
-    });
-
-
-    // ===== Soft Skills =====
-    softSkills.forEach(skill => {
-
-        const card = `
-            <div class="soft-skill-card">
-                ${skill}
-            </div>
-        `;
-
-        softContainer.innerHTML += card;
-
-    });
-
-}
-
-function loadCertificationsSection() {
-
-    const certifications = portfolioData.certifications;
-
-    const container = document.getElementById("certifications-container");
-
-    container.innerHTML = "";
-
-    certifications.forEach(cert => {
-
-        const card = `
-            <div class="certificate-card">
-
-                <img src="${cert.image}" alt="${cert.name}">
-
-                <div class="certificate-info">
-                    <h3>${cert.name}</h3>
-                    <p>${cert.source}</p>
-                </div>
-
-            </div>
-        `;
-
-        container.innerHTML += card;
-
-    });
-
-}
-
-function loadAdditionalSection() {
-
-    const additional = portfolioData.additional;
-
-    const container = document.getElementById("additional-container");
-
-    container.innerHTML = "";
-
-
-
-    // ===== Languages =====
-    let languagesHTML = "<div class='additional-group'><h3>Languages</h3>";
-
-    additional.languages.forEach(lang => {
-        languagesHTML += `<span class="tag">${lang}</span>`;
-    });
-
-    languagesHTML += "</div>";
-
-
-
-    // ===== Tools =====
-    let toolsHTML = "<div class='additional-group'><h3>Tools</h3>";
-
-    additional.tools.forEach(tool => {
-        toolsHTML += `<span class="tag">${tool}</span>`;
-    });
-
-    toolsHTML += "</div>";
-
-
-
-    // ===== Interests =====
-    let interestsHTML = "<div class='additional-group'><h3>Interests</h3>";
-
-    additional.interests.forEach(interest => {
-        interestsHTML += `<span class="tag">${interest}</span>`;
-    });
-
-    interestsHTML += "</div>";
-
-
-
-    // ===== Industry Visits =====
-    let visitsHTML = "<div class='additional-group'><h3>Industry Visits</h3>";
-
-    additional.industryVisits.forEach(visit => {
-        visitsHTML += `
-            <div class="visit-card">
-                <p>${visit.name}</p>
-                <span>${visit.date}</span>
-            </div>
-        `;
-    });
-
-    visitsHTML += "</div>";
-
-
-
-    container.innerHTML =
-        languagesHTML +
-        toolsHTML +
-        interestsHTML +
-        visitsHTML;
-
-}
-
-function loadContactSection() {
-
-    const contact = portfolioData.contact;
-
-    const container = document.getElementById("contact-container");
-
-    container.innerHTML = `
-
-<div class="contact-info">
-
-    <a class="contact-item"
-       href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(contact.address)}"
-       target="_blank">
-        <img src="assets/logo/loc.png" alt="Location">
-        <span>${contact.address}</span>
-
-    </a>
-
-    <a class="contact-item"
-       href="tel:${contact.phone.replace(/\s/g,'')}">
-
-        <img src="assets/logo/phn.png" alt="Phone">
-        <span>${contact.phone}</span>
-
-    </a>
-
-    <a class="contact-item"
-       href="mailto:${contact.email}?subject=Contact%20from%20Portfolio&body=Hello%20Amar,">
-
-        <img src="assets/logo/mail.png" alt="Email">
-        <span>${contact.email}</span>
-
-    </a>
-
-</div>
-
-
-<div class="contact-social">
-
-    <a href="${contact.github}" target="_blank">
-        <img src="assets/logo/git.png" alt="GitHub">
-    </a>
-
-    <a href="${contact.linkedin}" target="_blank">
-        <img src="assets/logo/lin.png" alt="LinkedIn">
-    </a>
-
-</div>
-
-`;
-
-
-}
-
-function loadExperiencePage() {
-
-    const experiences = portfolioData.experience;
-
-    const container = document.getElementById("experience-container");
-
-    container.innerHTML = "";
-
-    experiences.forEach(exp => {
-
-        let descriptionHTML = "";
-
-        exp.description.forEach(point => {
-            descriptionHTML += `<li>${point}</li>`;
+            row.appendChild(col);
         });
 
-        const card = `
-            <div class="experience-card">
+        slide.appendChild(row);
+        container.appendChild(slide);
+    }
+}
 
-                <h2>${exp.role}</h2>
+function loadAboutPage() {
+    const data = portfolioData.about2;
+    document.getElementById("aboutPageImage").src = data.aboutImage;
+    document.getElementById("aboutPageSummary").textContent = data.summary;
+    document.getElementById("whyContent").textContent = data.whyWorkWithMe;
+}
+function loadEducation() {
+    const eduData = portfolioData.education;
+    const container = document.getElementById("educationContainer");
 
-                <h3>${exp.company}</h3>
+    container.innerHTML = "";
 
-                <p class="exp-duration">${exp.duration}</p>
+    eduData.forEach(edu => {
+        const col = document.createElement("div");
+        col.className = "col-lg-4 mb-4";
 
-                <ul>
-                    ${descriptionHTML}
-                </ul>
+        col.innerHTML = `
+            <div class="edu-card">
+                <img src="${edu.institutionLogo}" class="edu-logo" alt="">
+                <h5 class="edu-degree">${edu.degree}</h5>
+                <h6 class="edu-inst">${edu.institution}</h6>
+                <p class="edu-duration">${edu.duration}</p>
 
+                <a href="${edu.resultImage}" target="_blank" class="btn btn-outline-gold mt-2">
+                    View Result
+                </a>
             </div>
         `;
 
-        container.innerHTML += card;
-
+        container.appendChild(col);
     });
-
 }
 
-function loadProjectsPage() {
+function loadCertifications() {
+    const certData = portfolioData.certifications;
+    const container = document.getElementById("certContainer");
 
+    container.innerHTML = "";
+
+    let groupSize = window.innerWidth >= 992 ? 3 : 1;
+
+    for (let i = 0; i < certData.length; i += groupSize) {
+        let group = certData.slice(i, i + groupSize);
+
+        let slide = document.createElement("div");
+        slide.className = "carousel-item";
+        if (i === 0) slide.classList.add("active");
+
+        let row = document.createElement("div");
+        row.className = "row";
+
+        group.forEach(cert => {
+            let col = document.createElement("div");
+            col.className = "col-lg-4 mb-4";
+
+            col.innerHTML = `
+                <div class="cert-card">
+                    <img src="${cert.image}" alt="">
+                    <div class="cert-overlay">
+                        <div class="cert-title">${cert.name}</div>
+                        <div class="cert-source">${cert.source}</div>
+                    </div>
+                </div>
+            `;
+
+            row.appendChild(col);
+        });
+
+        slide.appendChild(row);
+        container.appendChild(slide);
+    }
+}
+function loadAdditionalInfo() {
+    const data = portfolioData.additionalInfo;
+
+    // BASIC INFO
+    const basic = document.getElementById("basicInfo");
+
+    basic.innerHTML = `
+        <div class="col-md-3"><div class="info-box" style="height:70px;">DOB: ${data.dob}</div></div>
+        <div class="col-md-3"><div class="info-box" style="height:70px;">Native: ${data.native}</div></div>
+        <div class="col-md-3"><div class="info-box" style="height:70px;">Citizenship: ${data.citizenship}</div></div>
+        <div class="col-md-3"><div class="info-box" style="height:70px;">Marital Status: ${data.maritalStatus}</div></div>
+    `;
+
+    // LANGUAGES
+    document.getElementById("langTitle").textContent = data.languages.title;
+    document.getElementById("langIntro").textContent = data.languages.intro;
+
+    const langContainer = document.getElementById("langContainer");
+
+    data.languages.items.forEach(l => {
+        langContainer.innerHTML += `
+            <div class="small-card">
+                <img src="${l.logo}">
+                <div class="small-overlay">
+                    <p style="color: #dbab2d; font-weight:bolder; margin: 0px;">${l.language}</p>${l.Proficiency}
+                </div>
+            </div>
+        `;
+    });
+
+    // INTEREST
+    document.getElementById("intTitle").textContent = data.interestAreas.title;
+    document.getElementById("intIntro").textContent = data.interestAreas.intro;
+
+    const interestContainer = document.getElementById("interestContainer");
+
+    data.interestAreas.items.forEach(i => {
+        interestContainer.innerHTML += `
+            <div class="small-card">
+                <img src="${i.logo}">
+                <div class="small-overlay" style="color: #dbab2d; font-weight:bolder;">${i.title}</div>
+            </div>
+        `;
+    });
+}
+function loadSkills() {
+    const skills = portfolioData.skills;
+    const container = document.getElementById("skillsContainer");
+
+    // Intro
+    document.getElementById("skillsIntro").textContent = skills.intro;
+
+    // Loop through ALL keys dynamically
+    Object.keys(skills).forEach(key => {
+
+        // Skip intro
+        if (key === "intro") return;
+
+        const sectionData = skills[key];
+
+        let section = document.createElement("div");
+        section.className = "skill-section";
+
+        let html = `
+            <h3>${sectionData.title}</h3>
+            <div class="skills-flex">
+        `;
+
+        sectionData.items.forEach(skill => {
+            html += `
+                <div class="col-6 col-md-4 col-lg-3 mb-4">
+                    <div class="skill-card">
+
+                        <!-- LOGO -->
+                        <img src="${skill.logo}" alt="${skill.name}">
+
+                        <!-- HOVER -->
+                        <div class="skill-overlay">
+                            <div class="skill-name">${skill.name}</div>
+                            ${
+                                skill.level !== undefined
+                                ? `<div class="skill-level">${skill.level}%</div>`
+                                : ""
+                            }
+                        </div>
+
+                    </div>
+                </div>
+            `;
+        });
+
+        html += `</div>`;
+        section.innerHTML = html;
+
+        container.appendChild(section);
+    });
+}
+
+function loadProjects() {
     const projects = portfolioData.projects;
-
-    const container = document.getElementById("projects-container");
+    const container = document.getElementById("projectsContainer");
 
     container.innerHTML = "";
 
     projects.forEach(project => {
 
-        let techStack = "";
-
+        let techHTML = "";
         project.tech.forEach(t => {
-            techStack += `<span class="tech-tag">${t}</span>`;
+            techHTML += `<span class="tech-badge">${t}</span>`;
         });
 
-        const card = `
+        let buttonsHTML = "";
+
+        if (project.github) {
+            buttonsHTML += `<a href="${project.github}" target="_blank" class="btn btn-sm btn-outline-light">GitHub</a>`;
+        }
+
+        if (project.demo) {
+            buttonsHTML += `<a href="${project.demo}" target="_blank" class="btn btn-sm btn-warning">Live Demo</a>`;
+        }
+
+        let card = `
             <div class="project-card">
+                
+                <div>
+                    <h4 class="project-title">${project.name}</h4>
+                    <p class="project-desc">${project.description}</p>
+                    <p class="project-title">${project.duration}</p>
 
-                <h2>${project.name}</h2>
-
-                <p>${project.description}</p>
-
-                <div class="project-tech">
-                    ${techStack}
+                    <div class="tech-stack">
+                        ${techHTML}
+                    </div>
                 </div>
 
-                <div class="project-links">
-                    ${project.github ? `<a href="${project.github}" target="_blank">GitHub</a>` : ""}
-                    ${project.demo ? `<a href="${project.demo}" target="_blank">Live Demo</a>` : ""}
+                <div class="project-buttons">
+                    ${buttonsHTML}
                 </div>
 
             </div>
         `;
 
         container.innerHTML += card;
-
     });
+}
+function loadContactPage() {
+    const contact = portfolioData.contact;
 
+    // Image (first contact logo, or profile)
+    document.getElementById("contactImage").src = contact.contactImg;
+
+    // Title + Intro
+    document.getElementById("contactTitle").textContent = contact.title;
+    document.getElementById("contactIntro1").textContent = contact.para1;
+    document.getElementById("contactIntro2").textContent = contact.para2;
+    document.getElementById("contactIntro3").textContent = contact.para3;
+    document.getElementById("resume").src = "assets/logo/download.png";
+    document.getElementById("mail").src = "assets/logo/email.png";
+
+    // Email Button
+    
+    const about = portfolioData.about;
+    document.getElementById("resumeBtn").href = about.resume;
+
+    document.getElementById("contactEmailBtn").href = `mailto:${contact.item.find(i => i.title === "Email").content}?subject=Hello Amar`;
+
+    const requiredItems = ["Address", "Phone", "Email", "Whatsapp"];
+
+    const container = document.getElementById("contactInfo");
+    container.innerHTML = "";
+
+    contact.item
+        .filter(item => requiredItems.includes(item.title)) 
+        .forEach(item => {
+
+            let link = "#";
+
+            if (item.title === "Phone") {
+                link = `tel:${item.content}`;
+            }
+
+            if (item.title === "Email") {
+                link = `mailto:${item.content}?subject=Hello Amar`;
+            }
+
+            if (item.title === "Address") {
+                link = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(item.content)}`;
+            }
+
+            if (item.title === "Whatsapp") {
+    if (item.content) {
+        const number = item.content.replace(/\D/g, ""); // remove spaces, +, etc.
+        link = `https://wa.me/${number}?text=Hello Amar,`;
+    } else {
+        link = "#"; // no number available
+    }
+}
+
+            const card = document.createElement("div");
+            card.className = "col-12 col-md-4 contact-info-card text-center";
+
+            card.innerHTML = `
+                <img src="${item.logo}" alt="${item.title}" width="35" class="mb-2">
+                <div>${item.content}</div>
+            `;
+
+            card.addEventListener("click", () => {
+                window.open(link, "_blank");
+            });
+
+            container.appendChild(card);
+        });
 }
