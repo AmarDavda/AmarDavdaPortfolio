@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skills | Amar</title>
+    <title>About | Amar</title>
 
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -23,23 +26,113 @@
     <div class="collapse navbar-collapse" id="navMenu">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><a class="nav-link" href="index.html#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+        <li class="nav-item"><a class="nav-link" href="#work">Work</a></li>
+        <li class="nav-item"><a class="nav-link" href="#certification">Certification</a></li>
+        <li class="nav-item"><a class="nav-link" href="#info">My Info.</a></li>
         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
-<!-- ================= PROJECTS ================= -->
-<section id="projectsPage" class="projects-page py-5">
+<!-- ================= ABOUT INTRO ================= -->
+<section id="about" class="about-page-section py-5">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <!-- IMAGE -->
+      <div class="col-lg-5 text-center mb-4 mb-lg-0">
+        <img id="aboutPageImage" class="img-fluid about-img" alt="About">
+      </div>
+
+      <!-- TEXT -->
+      <div class="col-lg-7">
+        <h2 class="section-title">About Me</h2>
+        <p id="aboutPageSummary" class="about-text" style="text-align: justify;"></p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= EDUCATION ================= -->
+<section id="education" class="education-section py-5">
   <div class="container">
 
-    <h2 class="section-title text-center mb-3">My Projects</h2>
-    <p class="text-center mb-5">A collection of projects I have developed with passion and a strong desire to learn, representing my journey, some created during academic work and others driven by personal interest.</p>
+    <h2 class="section-title text-center mb-5">Education</h2>
 
-    <div id="projectsContainer" class="projects-grid"></div>
+    <div class="row" id="educationContainer">
+      <!-- JS will load cards -->
+    </div>
 
   </div>
 </section>
+
+<!-- ================= WHY WORK WITH ME ================= -->
+<section id="work" class="why-section py-5">
+  <div class="container">
+
+    <h2 class="section-title text-center mb-4">Why Work With Me?</h2>
+
+    <p id="whyContent" style="max-width: 850px; text-align: justify;" class="mx-auto"></p>
+
+  </div>
+</section>
+
+<!-- ================= CERTIFICATIONS ================= -->
+<section id="certification" class="cert-section py-5">
+  <div class="container">
+
+    <h2 class="section-title text-center mb-5">Certifications</h2>
+
+    <div id="certCarousel" class="carousel slide" data-bs-ride="carousel">
+      
+      <div class="carousel-inner" id="certContainer">
+        <!-- JS will inject -->
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#certCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+
+      <button class="carousel-control-next" type="button" data-bs-target="#certCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= ADDITIONAL INFO ================= -->
+<section id="info" class="additional-section py-5">
+  <div class="container">
+
+    <h2 class="section-title text-center mb-5">Additional Information</h2>
+
+    <!-- BASIC INFO -->
+    <div class="row text-center mb-5" id="basicInfo"></div>
+
+    <!-- LANGUAGES -->
+    <div class="mb-5 text-center">
+      <h4 id="langTitle"></h4>
+      <p id="langIntro" class="about-text"></p>
+
+      <div class="d-flex flex-wrap justify-content-center" id="langContainer"></div>
+    </div>
+
+    <!-- INTEREST AREAS -->
+    <div class="text-center">
+
+      <h4 id="intTitle"></h4>
+      <p id="intIntro" class="about-text"></p>
+      <div class="d-flex flex-wrap justify-content-center" id="interestContainer"></div>
+    </div>
+
+  </div>
+</section>
+
 
 <!-- ================= CONTACT CTA ================= -->
 <section id="contact" class="contact-section text-center d-flex align-items-center">
@@ -105,10 +198,11 @@ Passionate software developer focused on building clean, efficient, and meaningf
   </div>
 </footer>
 
-<!-- Bootstrap -->
+<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-<script>
+<!-- JS -->
+ <script>
   const navLinks = document.querySelectorAll('.nav-link');
   const menuToggle = document.getElementById('navMenu');
 
