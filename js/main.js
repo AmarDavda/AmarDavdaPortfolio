@@ -14,7 +14,6 @@ function initializeWebsite() {
         loadAbout();
         loadExperience();
     }
-
     if (isAboutPage) {
         loadAboutPage();
         loadEducation();
