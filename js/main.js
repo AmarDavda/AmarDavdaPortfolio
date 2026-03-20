@@ -217,16 +217,14 @@ function loadSkills() {
     const skills = portfolioData.skills;
     const container = document.getElementById("skillsContainer");
 
+    // Clear container (important if reload)
+    container.innerHTML = "";
+
     // Intro
     document.getElementById("skillsIntro").textContent = skills.intro;
 
-    // Loop through ALL keys dynamically
-    Object.keys(skills).forEach(key => {
-
-        // Skip intro
-        if (key === "intro") return;
-
-        const sectionData = skills[key];
+    // Loop through categories array
+    skills.categories.forEach(sectionData => {
 
         let section = document.createElement("div");
         section.className = "skill-section";
