@@ -1,0 +1,267 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== BODY ===== */
+body {
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background: #f4f6f8;
+  padding: 20px;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* ===== TITLE ===== */
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+/* ===== SECTION (VERTICAL) ===== */
+.section {
+  background: #ffffff;
+  padding: 20px;
+  margin-bottom: 25px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Section Title */
+.section h2 {
+  font-size: 20px;
+  border-left: 4px solid #007bff;
+  padding-left: 10px;
+}
+
+/* ===== FORM GRID (INPUTS) ===== */
+
+
+/* ===== INPUT BASE ===== */
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  transition: 0.2s;
+  outline: none;
+  background: #fff;
+}
+
+input {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: unset;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+  max-height: 200px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* Focus */
+input:focus, textarea:focus {
+  border-color: #007bff;
+}
+
+/* ===== FLOATING LABEL ===== */
+.form-group {
+  position: relative;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 14px 10px;
+  background: transparent;
+}
+
+/* Label */
+.form-group label {
+  position: absolute;
+  left: 10px;
+  top: 12px;
+  color: #777;
+  font-size: 14px;
+  pointer-events: none;
+  transition: all 0.25s ease;
+  background: #fff;
+  padding: 0 5px;
+}
+
+/* Floating effect */
+.form-group input:focus + label,
+.form-group input:not(:placeholder-shown) + label,
+.form-group textarea:focus + label,
+.form-group textarea:not(:placeholder-shown) + label {
+  top: -8px;
+  font-size: 11px;
+  color: #007bff;
+}
+
+/* ===== HORIZONTAL CARD CONTAINER ===== */
+.card-container {
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 16px;
+  
+}
+
+/* Scrollbar */
+.card-container::-webkit-scrollbar {
+  height: 6px;
+}
+
+.card-container::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 10px;
+}
+
+/* ===== CARD ITEM ===== */
+.array-item {
+  flex: 1 1 280px; /* grow | shrink | base width */
+  max-width: 320px;
+  min-height: 250px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  border: 1px solid #1a1919;
+  padding: 15px;
+  border-radius: 12px;
+  background: #fff;
+
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.array-item input,
+.array-item textarea {
+  margin-bottom: 8px;
+}
+
+/* ===== CARD BUTTON POSITION FIX ===== */
+.array-item button {
+  margin-top: auto;
+}
+
+/* ===== SKILL INNER ITEMS ===== */
+[id^="skills-items-"] {
+  display: flex;
+  flex-wrap: wrap; /* 🔥 allow wrapping */
+  gap: 10px;
+}
+[id^="skills-items-"] > div {
+  max-width: 150px;
+
+  border: 1px solid #ddd;
+  padding: 8px;
+  border-radius: 8px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+[id^="skills-items-"] input {
+  font-size: 12px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+[id^="skills-items-"] button {
+  margin-top: auto;
+  font-size: 12px;
+  padding: 4px 6px;
+}
+
+
+/* ===== BUTTON BASE ===== */
+button {
+  padding: 6px 12px;
+  margin: 5px;
+  font-size: 13px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+  width: fit-content;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* ===== BUTTON TYPES ===== */
+.add-btn {
+  background: #28a745;
+  color: #fff;
+  align-self: flex-start;
+}
+
+.delete-btn {
+  background: #dc3545;
+  color: #fff;
+}
+
+/* ===== CARD ACTION GROUP ===== */
+.card-actions {
+  margin-top: auto;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+/* ===== SAVE BUTTON ===== */
+.save-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.save-btn {
+  padding: 12px 26px;
+  font-size: 15px;
+  border-radius: 10px;
+  background: #007bff;
+  color: #fff;
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 600px) {
+
+  body {
+    padding: 12px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  .section {
+    padding: 15px;
+  }
+
+  .card-container {
+    flex-direction: column;
+  }
+
+  .array-item {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  button {
+    width: 100%;
+  }
+}
