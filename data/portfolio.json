@@ -60,6 +60,16 @@
       "name": "Database Programming with SQL",
       "source": "Oracle",
       "image": "assets/certificates/sql.jpg"
+    },
+    {
+      "name": "AWS Academy Machine Learning Foundations",
+      "source": "AWS Academy",
+      "image": "assets/certificates/ml.jpg"
+    },
+    {
+      "name": "AWS Academy Cloud Foundations",
+      "source": "AWS Academy ",
+      "image": "assets/certificates/cloud.jpg"
     }
   ],
   "additionalInfo": {
@@ -129,52 +139,156 @@
       {
         "title": "Programming Language",
         "items": [
-          {"name": "C", "level": 75, "logo": "assets/skills/c.png"},
-          {"name": "C++", "level": 70, "logo": "assets/skills/cpp.png"},
-          {"name": "Java", "level": 80, "logo": "assets/skills/java.png"},
-          {"name": "Python", "level": 75, "logo": "assets/skills/python.png"},
-          {"name": "C Sharp", "level": 70, "logo": "assets/skills/cs.png"},
-          {"name": "PHP", "level": 75, "logo": "assets/skills/php.png"},
-          {"name": "SQL", "level": 80, "logo": "assets/skills/sql.png"}
+          {
+            "name": "C",
+            "level": 75,
+            "logo": "assets/skills/c.png"
+          },
+          {
+            "name": "C++",
+            "level": 70,
+            "logo": "assets/skills/cpp.png"
+          },
+          {
+            "name": "Java",
+            "level": 80,
+            "logo": "assets/skills/java.png"
+          },
+          {
+            "name": "Python",
+            "level": 75,
+            "logo": "assets/skills/python.png"
+          },
+          {
+            "name": "C Sharp",
+            "level": 70,
+            "logo": "assets/skills/cs.png"
+          },
+          {
+            "name": "PHP",
+            "level": 75,
+            "logo": "assets/skills/php.png"
+          },
+          {
+            "name": "SQL",
+            "level": 80,
+            "logo": "assets/skills/sql.png"
+          }
         ]
       },
       {
         "title": "Web Development",
         "items": [
-          {"name": "HTML", "level": 90, "logo": "assets/skills/html.png"},
-          {"name": "CSS", "level": 85, "logo": "assets/skills/css.png"},
-          {"name": "JavaScript", "level": 75, "logo": "assets/skills/js.png"},
-          {"name": "React JS", "level": 90, "logo": "assets/skills/react.png"},
-          {"name": "Node JS", "level": 85, "logo": "assets/skills/node.png"},
-          {"name": "Express JS", "level": 75, "logo": "assets/skills/express.png"},
-          {"name": "Bootstrap", "level": 80, "logo": "assets/skills/boot.png"},
-          {"name": "Tailwind CSS", "level": 80, "logo": "assets/skills/tail.png"}
+          {
+            "name": "HTML",
+            "level": 90,
+            "logo": "assets/skills/html.png"
+          },
+          {
+            "name": "CSS",
+            "level": 85,
+            "logo": "assets/skills/css.png"
+          },
+          {
+            "name": "JavaScript",
+            "level": 75,
+            "logo": "assets/skills/js.png"
+          },
+          {
+            "name": "React JS",
+            "level": 90,
+            "logo": "assets/skills/react.png"
+          },
+          {
+            "name": "Node JS",
+            "level": 85,
+            "logo": "assets/skills/node.png"
+          },
+          {
+            "name": "Express JS",
+            "level": 75,
+            "logo": "assets/skills/express.png"
+          },
+          {
+            "name": "Bootstrap",
+            "level": 80,
+            "logo": "assets/skills/boot.png"
+          },
+          {
+            "name": "Tailwind CSS",
+            "level": 80,
+            "logo": "assets/skills/tail.png"
+          }
         ]
       },
       {
         "title": "Database Programming",
         "items": [
-          {"name": "MySQL", "level": 80, "logo": "assets/skills/mysql.png"},
-          {"name": "MongoDB", "level": 80, "logo": "assets/skills/mongo.png"},
-          {"name": "PostgreSQL", "level": 70, "logo": "assets/skills/postgre.png"}
+          {
+            "name": "MySQL",
+            "level": 80,
+            "logo": "assets/skills/mysql.png"
+          },
+          {
+            "name": "MongoDB",
+            "level": 80,
+            "logo": "assets/skills/mongo.png"
+          },
+          {
+            "name": "PostgreSQL",
+            "level": 70,
+            "logo": "assets/skills/postgre.png"
+          }
         ]
       },
       {
         "title": "Mobile App Development",
         "items": [
-          {"name": "Kotlin", "level": 75, "logo": "assets/skills/kotlin.png"},
-          {"name": "Dart", "level": 70, "logo": "assets/skills/dart.png"},
-          {"name": "Flutter", "level": 70, "logo": "assets/skills/flutter.png"}
+          {
+            "name": "Kotlin",
+            "level": 75,
+            "logo": "assets/skills/kotlin.png"
+          },
+          {
+            "name": "Dart",
+            "level": 70,
+            "logo": "assets/skills/dart.png"
+          },
+          {
+            "name": "Flutter",
+            "level": 70,
+            "logo": "assets/skills/flutter.png"
+          }
         ]
       },
       {
         "title": "Soft Skills",
         "items": [
-          {"name": "Problem Solving", "logo": "assets/skills/problem2.png"},
-          {"name": "Teamwork", "logo": "assets/skills/team.png"},
-          {"name": "Communication", "logo": "assets/skills/communication.png"},
-          {"name": "Presentation", "logo": "assets/skills/presentation.png"},
-          {"name": "Time Management", "logo": "assets/skills/time.png"}
+          {
+            "name": "Problem Solving",
+            "logo": "assets/skills/problem2.png"
+          },
+          {
+            "name": "Teamwork",
+            "logo": "assets/skills/team.png"
+          },
+          {
+            "name": "Communication",
+            "logo": "assets/skills/communication.png"
+          },
+          {
+            "name": "Presentation",
+            "logo": "assets/skills/presentation.png"
+          },
+          {
+            "name": "Time Management",
+            "logo": "assets/skills/time.png"
+          },
+          {
+            "name": "Work Ethics ",
+            "level": 0,
+            "logo": "assets/skills/work.png"
+          }
         ]
       },
       {
@@ -279,7 +393,7 @@
     }
   ],
   "contact": {
-    "title": "Get In Touch",
+    "title": "Be In Touch",
     "contactImg": "assets/profile/flower.png",
     "para1": "Let's Create Eomething Extraordinary.",
     "para2": "So Let's Work Together to Shape Future, and Transform the Ideas and Thoughts into Reality.",
