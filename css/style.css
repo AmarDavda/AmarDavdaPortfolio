@@ -440,6 +440,7 @@ body {
 .skill-card img {
     width: 70px;
     transition: 0.3s;
+    filter: drop-shadow(0 0 5px rgba(249, 230, 182, 0.4));
 }
 
 /* HOVER OVERLAY */
